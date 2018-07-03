@@ -1,0 +1,37 @@
+{% extends "medic_app/noauth.html" %}
+
+{% block title %}
+Doctors
+{% endblock %}
+
+{% block body %}
+<center><h2>Signup details for customers : </h2></center>
+<div>
+	<center>
+	<form id="sign_form" action="/home/sign" method="post">
+	{% csrf_token %}
+	<label for="uid">User Name</label><br>
+	<input type="text" id="uid" name="uid" placeholder="Enter the user ID..."><br><br>	
+
+ 	<label for="pass1">Enter a password</label><br>
+    	<input type="password" id="pass1" name="pass1" placeholder="Enter the Password..."><br><br>
+	
+	<label for="pass2">Re-enter the password</label><br>
+    	<input type="password" id="pass2" name="pass2" placeholder="Re-enter Password..."><br><br>
+	
+	<label for="name">Name</label><br>
+    	<input type="text" id="name" name="name" placeholder="Enter your name..."><br><br>
+
+	<label for="mob_num">Mobile Number</label><br>
+    	<input type="text" id="mob_num" name="mob_num" placeholder="Enter mobile number..."><br><br>
+
+	<label for="out_amt">Outstanding Amount</label><br>
+    	<input type="text" id="out_amt" name="out_amt" placeholder="Outstanding Amount..."><br><br>
+
+	<label for="add">Address</label><br>
+    	<input type="text" id="add" name="add" placeholder="Enter Address..."><br><br>
+    <input type="submit" value="Submit" form="sign_form">
+  </form>
+  </center>
+</div>
+{% endblock %}

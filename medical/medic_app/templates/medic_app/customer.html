@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+{% load static %}
+
+<html>
+<head>
+{% block head %}
+{% endblock %}
+<title>
+{% block title %}
+Customer Authenticated.
+{% endblock %}
+</title>
+
+<link rel="stylesheet" type="text/css" href={% static 'pro.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'Background.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'appointment.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'style.css' %}>
+<link rel="stylesheet" type="text/css" href={% static 'card.css' %}>
+
+</head>
+<body>
+<header>
+	<center>
+		<ul class="heading">
+		<li><h2 class="comicsans">Dinesh Medical Stores</h2></li>
+		<li><h2 class="comicsans">Kota, Rajasthan</h2></li>
+		</ul>
+	</center>
+
+	<ul class="topnav" id="myTopnav">
+	<li><a href="/home/customer/">Hello Customer</a></li>
+	<li><a href="/home/customer/doctor2">Doctor</a></li>
+  	<li><a href="/home/customer/medi_info">Medicine Info</a></li>
+ 	<li><a href="/home/customer/personal">{{name}}</a></li>
+	<li><a href="/home/customer/order">Order</a></li>
+  	<li><a href="/home/logout">Sign-Out</a></li>
+	</ul>
+</header>
+
+{% block body %}
+<center>
+<br>
+<h2><u>Customer Dashboard</u></h2>
+<br>
+<img src="/static/img_avatar.png" alt="customer" style="width:600px;height:600px;">
+</center>
+{% endblock %}
+
+<div class="row"></div><br>
+<div class="separator">
+	<center>Hope we catered to your requests!!<br>
+	Thank You for your support.
+	</center></div>
+<footer>
+	<div class="foot">	
+		<ul class="linkc">
+		<li><h3>Quick Links</h3></li>
+		<li><a class="footer" href="https://www.justdial.com/KOTA-RAJASTHAN/Dinesh-Medical-Store-I-L-Chauraha-Vigyan-Ngr-Kota-H-O/9999PMULDELSTD30139_BZDET">Dinesh Medical Stores on Justdial</a></li>
+		</ul>
+	</div>
+</footer>

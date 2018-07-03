@@ -1,0 +1,27 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+<center><h3>Enter new Doctor.</h3></center>
+
+<div>
+	<center>
+	<form id="doc_form" action="" method="post">
+	{% csrf_token %}
+		<label for="name">Name</label><br>
+		<input type="text" id="name" name="name" placeholder="Enter the name of the doctor..." required><br><br>
+
+		<label for="spec">Specialisation</label><br>
+		<input type="text" id="spec" name="spec" placeholder="Specialised in..." required><br><br>
+
+		<label for="con">Contact Information</label><br>
+		<input type="text" id="con" name="con" placeholder="Mobile Number..." required><br><br>
+
+		<input type="submit" value="Submit" form="doc_form">
+	</form>
+	</center>
+</div>
+{% endblock %}

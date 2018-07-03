@@ -1,0 +1,25 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+<center><h3>Enter new Prescription.</h3></center>
+
+<div>
+	<center>
+	<form id="pres_form" action="" method="post">
+	{% csrf_token %}
+		<label for="doc_id">Doctor's ID</label><br>
+		<input type="text" id="doc_id" name="doc_id" placeholder="Enter the doctor's ID.." required><br><br>
+
+		<label for="med_id">Medicine ID</label><br>
+		<input type="text" id="med_id" name="med_id" placeholder="Enter the prescribed medicine ID.." required><br><br>
+
+		<input type="submit" value="Submit" form="pres_form">
+	</form>
+	</center>
+</div>
+
+{% endblock %}

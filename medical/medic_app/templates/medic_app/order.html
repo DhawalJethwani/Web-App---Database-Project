@@ -1,0 +1,42 @@
+{% extends "medic_app/customer.html" %}
+
+{% block title %}
+Place an order.
+{% endblock %}
+
+{% block body %}
+
+<center><h2><u>Place your order.</u></h2></center>
+<body>
+<center>
+<form id="order_form" action="" method="post">
+{% csrf_token %}
+	{%  for medicine in medicines %}
+
+	<div class="w3-container">
+
+  <div class="w3-card-4 w3-white" style="width:30%">
+    	<center><header class="w3-container w3-green">
+		<h2>{{ medicine.1 }}</h2>
+    	</header>
+    <div class="w3-container">
+	<h3><p><strong>Salt Information</strong>:&nbsp{{ medicine.2 }}</p><hr>
+	<strong>Shelf-Life</strong>:&nbsp{{ medicine.3 }}&nbsp years<br>
+	<strong>Price</strong>:&nbsp{{ medicine.4 }}/-<br>
+	<strong>Company Name</strong>:&nbsp{{ medicine.6 }}<br>
+	<strong>Recommended Dosage</strong>:&nbsp{{ medicine.7 }}&nbsp mg</p><br>
+	<strong>Enter the quantity of the medicine you wish to buy:<br><h3>
+    </div>
+    	<input type="number" id="quan" name="quan" placeholder="Quantity....." value="0"></center><br><br>
+  	</div>
+	</div>
+	<br>
+	<br>
+	{% endfor %}
+	<input type="submit" value="Buy" form="order_form" style="width:40%">
+</form>
+</center>
+
+{% endblock %}
+
+

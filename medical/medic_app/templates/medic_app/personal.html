@@ -1,0 +1,52 @@
+{% extends "medic_app/customer.html" %}
+
+{% block title %}
+Customer's Information
+{% endblock %}
+
+{% block body %}
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+<center>
+<br>
+<u><h1>Customer's Personal Information</h1></u>
+<div class="w3-container">
+
+  <div class="w3-card-4 w3-white" style="width:20%">
+    	<center><header class="w3-container w3-green">
+		<h2>{{ cust.2 }}</h2>
+    	</header>
+    <div class="w3-container">
+	<br>
+	<img src="/static/img_avatar.png" alt="customer" style="width:200px;height:200px;">
+	<h4><br><strong>Mobile Number</strong>:&nbsp{{ cust.3 }}<br>
+	<br><strong>Outstanding Amount</strong>:&nbsp{{ cust.4 }}/-<br>
+	<br><strong>Address</strong>:&nbsp{{ cust.5 }}<br><h4>
+   </div>
+  </div>
+</div>
+</center>
+{% endblock %}
+
+

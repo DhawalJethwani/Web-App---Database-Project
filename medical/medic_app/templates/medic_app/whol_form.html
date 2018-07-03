@@ -1,0 +1,35 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+<center><h3>Enter new Wholesaler.</h3></center>
+
+<div>
+	<center>
+	<form id="who_form" action="" method="post">
+	{% csrf_token %}
+	<label for="nof">Name of the firm</label><br>
+	<input type="text" id="nof" name="nof" placeholder="Enter the name of the firm..." required><br><br>
+
+ 	<label for="cont">Contact Number</label><br>
+    	<input type="text" id="cont" name="cont" placeholder="Enter the Contact Number..." required><br><br>
+
+	<label for="add">Address</label><br>
+    	<input type="text" id="add" name="add" placeholder="Enter the Address..." required><br><br>
+
+	<label for="time">Time</label><br>
+    	<input type="text" id="time" name="time" placeholder="Enter the opening and closing hours..." required><br><br>
+
+	<label for="due">Outstanding Amount</label><br>
+    	<input type="text" id="due" name="due" placeholder="Enter the amount due..." required><br><br>
+
+    <input type="submit" value="Submit" form="who_form">
+  </form>
+  </center>
+</div>
+
+{% endblock %}
+

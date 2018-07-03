@@ -1,0 +1,33 @@
+{% extends "medic_app/customer.html" %}
+
+{% block head %}
+<script src= "https://www.payumoney.com/Api/REST/op/buttonScript" async="true" > </script>
+<script>
+function paymee(){
+	//alert(document.getElementById("amnt").value);
+window.PUM.setData("{{ amount }}", "{{ bill_id }}","product");
+window.PUM.pay()
+};
+</script>
+{% endblock %}
+
+{% block title %}
+Payment
+{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<center><h3>Click on the button to pay money.<br> You will be redirected to the payment gateway</h3>
+<h1>You are supposed to pay {{amount}}</h1>
+<span class='pm-button' id='C87B25B72F605E39905C6BDB8AFF27A2' onclick="paymee()">
+  <span class="state active">
+    <input type="image" src="https://file.payumoney.com/images/payby_payumoney/new_buttons/21.png" width="131" height="37">
+  </span>
+  <span class="state clicked" style="display:none" >
+    <input type="image" src="https://file.payumoney.com/images/payby_payumoney/new_buttons/submitted/21.png" width="131" height="37">
+  </span>
+</span>
+</center>
+{% endblock %}
+

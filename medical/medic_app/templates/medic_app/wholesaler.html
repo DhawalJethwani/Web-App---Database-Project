@@ -1,0 +1,73 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+<center>
+<br>
+<h2>Records in Wholesaler Table</h2>
+<br>
+<div>
+	<table id="t01">
+	<tr>
+	    	<th>Wholesaler ID</th>
+	    	<th>Name of Firm</th> 
+	    	<th>Contact Number</th>
+	    	<th>Address</th>
+	    	<th>Time</th>
+		<th>Outstanding Amount</th>
+	</tr>
+{% for wholesaler in wholesalers %}
+	<tr>
+		<td>{{wholesaler.0}}</td>
+		<td>{{wholesaler.1}}</td>
+		<td>{{wholesaler.2}}</td>
+		<td>{{wholesaler.3}}</td>
+		<td>{{wholesaler.4}}</td>
+		<td>{{wholesaler.5}}</td>
+	</tr>
+{% endfor %}
+	</table>
+<br>
+<br>
+</div>
+</center>
+<div>
+	<center>
+	<br>
+	<h2>Enter the Wholesaler ID to delete it from the database : </h2>
+	<br>	
+	<form id="whol_del" action="" method="post">
+	{% csrf_token %}
+		<label for="id">Wholesaler ID</label>
+		<input type="text" id="id" name="id" placeholder="Wholesaler ID..."><br>
+		<input type="submit" value="Delete" form="whol_del">
+	</form>
+	</center>
+</div>
+{% endblock %}

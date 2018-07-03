@@ -1,0 +1,43 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+
+<center><h3>Enter new Stock Item.</h3></center>
+
+<div>
+	<center>
+	<form id="sto_form" action="" method="post">
+	{% csrf_token %}
+		<label for="wholesaler_id">Wholesaler ID</label><br>
+		<input type="text" id="whol_id" name="whol_id" placeholder="Enter the wholesaler ID..." required><br><br>
+
+ 		<label for="batch_id">Batch ID</label><br>
+    		<input type="text" id="batch_id" name="batch_id" placeholder="Enter the batch ID..." required><br><br>
+
+		<label for="dom">Date of Manufacturing</label><br>
+    		<input type="text" id="dom" name="dom" placeholder="Enter the Date of Manufacturing..." required><br><br>
+
+		<label for="exp">Expiry Date</label><br>
+    		<input type="text" id="exp" name="exp" placeholder="Enter the Expiry Date..." required><br><br>
+
+		<label for="quan">Quantity</label><br>
+    		<input type="text" id="quan" name="quan" placeholder="Enter the Quantity Purchased..." required><br><br>
+
+		<label for="min">Minimum Quantity in Stock</label><br>
+    		<input type="text" id="min" name="min" placeholder="Enter the minimum quantity needed in stock..." required><br><br>
+
+		<label for="cost">Cost</label><br>
+    		<input type="text" id="cost" name="cost" placeholder="Enter the cost..." required><br><br>
+
+		<label for="med">Medicine ID</label><br>
+    		<input type="text" id="med" name="med" placeholder="Enter the medicine ID..." required><br><br>
+
+    	<input type="submit" value="Submit" form="sto_form">
+  	</form>
+	</center>
+</div>
+{% endblock %}

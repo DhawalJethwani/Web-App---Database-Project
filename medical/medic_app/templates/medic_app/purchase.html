@@ -1,0 +1,71 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+<center>
+<br>
+<h2>Records in Purchases' Table</h2>
+<br>
+<div>
+	<table id="t01">
+	<tr>
+	    	<th>Purchase Bill ID</th>
+	    	<th>Date of Purchase</th>
+		<th>Puchase Amount</th>
+		<th>Payment Mode</th>
+		<th>Wholesaler</th> 
+	</tr>
+{% for purchase in purchases %}
+	<tr>
+		<td>{{purchase.0}}</td>
+		<td>{{purchase.1}}</td>
+		<td>{{purchase.2}}</td>
+		<td>{{purchase.3}}</td>
+		<td>{{purchase.4}}</td>
+	</tr>
+{% endfor %}
+	</table>
+<br>
+<br>
+</div>
+</center>
+<div>
+	<center>
+	<br>
+	<h2>Enter the Purchase ID to delete it from the database : </h2>
+	<br>	
+	<form id="pur_del" action="" method="post">
+	{% csrf_token %}
+		<label for="id">Purchase ID</label>
+		<input type="text" id="id" name="id" placeholder="Purchase ID..."><br>
+		<input type="submit" value="Delete" form="pur_del">
+	</form>
+	</center>
+</div>
+{% endblock %}

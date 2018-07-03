@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+<head>
+
+<title>
+{% block title %}
+Not Authenticated.
+{% endblock %}
+</title>
+
+<link rel="stylesheet" type="text/css" href={% static 'pro.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'Background.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'appointment.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'style.css' %}/>
+
+</head>
+<body>
+<header>
+	<center>
+		<ul class="heading">
+		<li><h2 class="comicsans">Dinesh Medical Stores</h2></li>
+		<li><h2 class="comicsans">Kota, Rajasthan</h2></li>
+		</ul>
+	</center>
+
+	<ul class="topnav" id="myTopnav">
+  	<li><a class="active" href="/home/noauth/">Home</a></li>
+	<li><a href="/home/noauth/doctor3">Doctor</a></li>
+  	<li><a href="/home/noauth/med_info">Medicine Info</a></li>
+ 	<li><a href="/home/noauth/login">Login</a></li>
+  	<li><a href="/home/noauth/signup">SignUp</a></li>
+	<li><a href="/home/noauth/abt_us">About Us</a></li>
+	</ul>
+</header>
+
+{% block body %}
+<center>
+<br>
+<h2>Healthcare at your doorstep</h2>
+<br>
+<img src="/static/pump.jpg" alt="pump" style="width:900px;height:600px;">
+</center>
+{% endblock %}
+
+<div class="row"></div><br>
+<div class="separator">
+	<center>Hope we cater to your requests!!<br>
+	Thank You for your support.
+	</center></div>
+<footer>
+	<div class="foot">	
+		<ul class="linkc">
+		<li><h3>Quick Links</h3></li>
+		<li><a class="footer" href="https://www.justdial.com/KOTA-RAJASTHAN/Dinesh-Medical-Store-I-L-Chauraha-Vigyan-Ngr-Kota-H-O/9999PMULDELSTD30139_BZDET">Dinesh Medical Stores on Justdial</a></li>
+		</ul>
+	</div>
+</footer>

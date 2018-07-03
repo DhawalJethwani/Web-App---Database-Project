@@ -1,0 +1,40 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+<center><h3>Enter new medicine.</h3></center>
+
+<div>
+	<center>
+	<form id="med_form" action="" method="post">
+		{% csrf_token %}
+		<label for="name">Name</label><br>
+		<input type="text" id="name" name="name" placeholder="Medicine name.." required><br><br>
+
+		<label for="salt_info">Salt Information</label><br>
+		<input type="text" id="salt_info" name="salt_info" placeholder="This medicine contains.." required><br><br>
+
+ 		<label for="life">Shelf-life</label><br>
+    		<input type="text" id="life" name="life" placeholder="Enter the shelf-life.." required><br><br>
+
+	    	<label for="price">Price</label><br>
+	    	<input type="text" id="price" name="price" placeholder="Price of one unit.." required><br><br>
+	
+	    	<label for="req">Is a prescription required for sale?</label><br><br>
+	    	<input type="radio" name="req" value="Yes"><label for="Yes">Yes</label>
+	    	<input type="radio" name="req" value="No"><label for="No">No</label><br><br>
+
+		<label for="comp_name">Company Name</label><br>
+		<input type="text" id="comp_name" name="comp_name" placeholder="Name of the manufacturing company.." required><br><br>
+	
+		<label for="rec_dos">Recomended Dosage</label><br>
+		<input type="text" id="rec_dos" name="rec_dos" placeholder="Dosage.." required><br><br>
+
+	    <input type="submit" value="Submit" form="med_form">
+  </form>
+  </center>
+</div>
+{% endblock %}

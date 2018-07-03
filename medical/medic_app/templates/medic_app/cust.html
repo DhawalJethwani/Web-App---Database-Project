@@ -1,0 +1,73 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+<center>
+<br>
+<h2>Records in Customer Table</h2>
+<br>
+<div>
+	<table id="t01">
+	<tr>
+	    	<th>Customer</th>
+	    	<th>Password</th> 
+	    	<th>Name</th>
+	    	<th>Mobile Number</th>
+		<th>Outstanding Amount</th>
+		<th>Address</th>
+	</tr>
+{% for customer in customers %}
+	<tr>
+		<td>{{customer.0}}</td>
+		<td>{{customer.1}}</td>
+		<td>{{customer.2}}</td>
+		<td>{{customer.3}}</td>
+		<td>{{customer.4}}</td>
+		<td>{{customer.5}}</td>
+	</tr>
+{% endfor %}
+	</table>
+<br>
+<br>
+</div>
+</center>
+<div>
+	<center>
+	<br>
+	<h2>Enter the Customer ID to delete it from the database : </h2>
+	<br>	
+	<form id="cust_del" action="" method="post">
+	{% csrf_token %}
+		<label for="id">Customer ID</label>
+		<input type="text" id="id" name="id" placeholder="Customer ID..."><br>
+		<input type="submit" value="Delete" form="cust_del">
+	</form>
+	</center>
+</div>
+{% endblock %}

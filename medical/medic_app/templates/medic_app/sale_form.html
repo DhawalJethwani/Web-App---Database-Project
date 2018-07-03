@@ -1,0 +1,27 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Sale
+{% endblock %}
+
+{% block body %}
+<center><h3>Enter new Sale.</h3></center>
+
+<div>
+	<center>
+	<form id="sale_form" action="/home/admin/sale_form" method="post">
+	{% csrf_token %}
+		<label for="sale_dos">Date of Sale</label><br>
+		<input type="text" id="sale_dos" name="sale_dos" placeholder="Enter the date of sale.." required><br><br>
+
+ 		<label for="sale_amt">Sale Amount</label><br>
+    		<input type="text" id="sale_amt" name="sale_amt" placeholder="Enter the sale amount.." required><br><br>
+
+		<label for="cust">Customer</label><br>
+    		<input type="text" id="cust" name="cust" placeholder="Enter the ID of the Customer..." required><br><br>
+
+    	<input type="submit" value="Add Sale Details" form="sale_form">
+  	</form>
+  	</center>
+</div>
+{% endblock %}

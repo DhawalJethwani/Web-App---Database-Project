@@ -1,0 +1,79 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Stock Item
+{% endblock %}
+
+{% block body %}
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+<center>
+<br>
+<h2>Records in Stock Table</h2>
+<br>
+<div>
+	<table id="t01">
+	<tr>
+	    	<th>Stock Item ID</th>
+	    	<th>Wholesaler ID</th> 
+	    	<th>Batch ID</th>
+	    	<th>Date of Manufacture</th>
+	    	<th>Expiry Date</th>
+		<th>Quantity Non-Expiry</th>
+		<th>Minimum Quantity</th>
+		<th>Cost</th>
+		<th>Medicine ID</th>
+	</tr>
+{% for stock in stocks %}
+	<tr>
+		<td>{{stock.0}}</td>
+		<td>{{stock.1}}</td>
+		<td>{{stock.2}}</td>
+		<td>{{stock.3}}</td>
+		<td>{{stock.4}}</td>
+		<td>{{stock.5}}</td>
+		<td>{{stock.6}}</td>
+		<td>{{stock.7}}</td>
+		<td>{{stock.8}}</td>
+	</tr>
+{% endfor %}
+	</table>
+<br>
+<br>
+</div>
+</center>
+<div>
+	<center>
+	<br>
+	<h2>Enter the Stock ID to delete it from the database : </h2>
+	<br>	
+	<form id="stock_del" action="" method="post">
+	{% csrf_token %}
+		<label for="id">Stock ID</label>
+		<input type="text" id="id" name="id" placeholder="Stock ID..."><br>
+		<input type="submit" value="Delete" form="stock_del">
+	</form>
+	</center>
+</div>
+{% endblock %}

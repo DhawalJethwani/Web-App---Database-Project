@@ -1,0 +1,23 @@
+{% extends "medic_app/noauth.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+<center><h2>Enter your login details : </h2></center>
+<div>
+	<center>
+	<form id="log_form" action="/home/logged" method="post">
+		{% csrf_token %}
+	    <label for="uid">User Name</label><br>
+	    <input type="text" id="uid" name="uid" placeholder="Enter the user ID..." required><br><br>
+
+ 	   <label for="pass">Password</label><br>
+    	<input type="password" id="pass" name="pass" placeholder="Enter the Password..." required><br><br>
+
+    <input type="submit" value="Login" form="log_form">
+  </form>
+  </center>
+</div>
+{% endblock %}

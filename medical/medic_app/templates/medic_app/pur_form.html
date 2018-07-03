@@ -1,0 +1,35 @@
+{% extends "medic_app/admin.html" %}
+
+{% block title %}
+New Purchase
+{% endblock %}
+
+{% block body %}
+<center><h3>Enter a new purchase.</h3></center>
+
+<div>
+	<center>
+	<form id="pur_form" action="" method="post">
+		{% csrf_token %}
+		<label for="pur_dos">Date of Purchase</label><br>
+		<input type="text" id="pur_dos" name="pur_dos" placeholder="Enter the date of purchase.." required><br><br>
+
+		<label for="pur_amt">Purchase Amount</label><br>
+		<input type="text" id="pur_amt" name="pur_amt" placeholder="Enter the purchase amount.." required><br><br>
+
+		<label for="pay_mode">Payment Mode</label><br>
+		<select id="pay_mode" name="pay_mode">
+			<option value="Cash">Cash</option>
+			<option value="Check">Check</option>
+			<option value="Card">Card</option>
+			<option value="Wallet">Wallet</option>
+		</select><br><br>
+
+		<label for="wholesaler">Wholesaler</label><br>
+		<input type="text" id="whol" name="whol" placeholder="Enter the ID of the Wholesaler..." required><br><br>
+
+		<input type="submit" value="Submit" form="pur_form">
+	</form>
+	</center>
+</div>
+{% endblock %}

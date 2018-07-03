@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+<head>
+
+<title>
+{% block title %}
+Admin Authenticated.
+{% endblock %}
+</title>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+</style>
+
+<link rel="stylesheet" type="text/css" href={% static 'pro.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'Background.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'appointment.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'style.css' %}/>
+<link rel="stylesheet" type="text/css" href={% static 'card.css' %}>
+
+</head>
+<body>
+<header>
+	<center>
+		<ul class="heading">
+		<li><h2 class="comicsans">Dinesh Medical Stores</h2></li>
+		<li><h2 class="comicsans">Kota, Rajasthan</h2></li>
+		</ul>
+	</center>
+
+	<ul class="topnav" id="myTopnav">
+	<li><a href="/home/admin/">Hello Admin</a></li>
+	<li class="dropdown"><a class="dropbtn">Add in Tables</a>
+	<div class="dropdown-content">
+		<a href="/home/admin/sto_form">Stock</a>
+		<a href="/home/admin/whol_form">Wholesaler</a>
+		<a href="/home/admin/med_form">Medicine</a>
+		<a href="/home/admin/pur_form">Purchase</a>
+		<a href="/home/admin/sale_form">Sale</a>
+		<a href="/home/admin/doc_form">Doctors</a>
+		<a href="/home/admin/pres_form">Prescription</a>
+	</div>	
+	</li>
+
+	<li class="dropdown"><a class="dropbtn">Veiw Info About</a>
+	<div class="dropdown-content">
+		<a href="/home/admin/stock">Stock</a>
+		<a href="/home/admin/wholesaler">Wholesalers</a>
+		<a href="/home/admin/med">Medicines</a>
+		<a href="/home/admin/purchase">Purchases</a>
+		<a href="/home/admin/sale">Sales</a>
+		<a href="/home/admin/doctor1">Doctors</a>
+		<a href="/home/admin/cust">Customers</a>
+		<a href="/home/admin/pres">Prescription</a>
+	</div>
+	</li>
+	<li><a href="/home/admin/short">Shortage</a></li>
+	<li><a href="/home/logout">Sign-out</a></li>
+	</ul>
+</header>
+
+{% block body %}
+<center>
+<br>
+<h2>Admin Dashboard</h2>
+<br>
+<img src="/static/admin.jpg" alt="admin" style="width:900px;height:600px;">
+</center>
+{% endblock %}
+<div class="row"></div><br>
+<div class="separator">
+	<center>Work is worship.<br>
+	We care!!
+	</center></div>
+<footer>
+	<div class="foot">	
+		<ul class="linkc">
+		<li><h3>Quick Links</h3></li>
+		<li><a class="footer" href="https://www.justdial.com/KOTA-RAJASTHAN/Dinesh-Medical-Store-I-L-Chauraha-Vigyan-Ngr-Kota-H-O/9999PMULDELSTD30139_BZDET">Dinesh Medical Stores on Justdial</a></li>
+		</ul>
+	</div>
+</footer>
